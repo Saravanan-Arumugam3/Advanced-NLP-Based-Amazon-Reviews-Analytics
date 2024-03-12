@@ -59,6 +59,6 @@ tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_fea
 
 print(tfidf_df)
 
-df.to_csv("tfidf.csv")
+tfidf_df.to_csv("tfidf.csv")
 
 os.remove("Clean_1.csv")
