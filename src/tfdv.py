@@ -83,7 +83,7 @@ def run_tfdv_workflow(data_path, schema_output_path):
 #Define the main execution logic
 if __name__ == '__main__':
     # Specify the data path and schema output path
-    data_path = '/clean1.csv'
+    data_path = '/clean_1.csv'
     schema_output_path = 'schema.pbtxt'
     # Run the TFDV workflow
     run_tfdv_workflow(data_path, schema_output_path)
