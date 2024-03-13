@@ -1,5 +1,0 @@
-requests
-pandas
-google-api-python-client
-google-cloud-storage
-selenium
