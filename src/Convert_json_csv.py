@@ -1,41 +1,49 @@
-import gzip
+import os
 import json
 import csv
-import os
+import logging
 
-current_directory = os.getcwd()
+# Set the directory where your .json files are located
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/yasir/Desktop/MLops_Project/Advanced-NLP-Based-Amazon-Reviews-Analytics/data')
+DIRECTORY_PATH = AIRFLOW_HOME
 
-# Function to convert JSON file to CSV with a consistent column order
-def json_to_csv_ordered(json_file_path, csv_file_path, columns):
-    with open(json_file_path, 'r', encoding='utf-8') as jfile, open(csv_file_path, 'w', newline='', encoding='utf-8') as cfile:
-        writer = csv.DictWriter(cfile, fieldnames=columns)
-        writer.writeheader()
-        for line in jfile:
-            jdata = json.loads(line)
-            writer.writerow({col: jdata.get(col, "") for col in columns})
+def json_csv():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info(f"Starting JSON to CSV conversion in directory: {DIRECTORY_PATH}")
 
-# List of JSON keys for CSV columns in the desired order
-columns = ["overall", "verified", "reviewTime", "reviewerID", "asin", "reviewerName", "reviewText", "summary", "unixReviewTime"]
+    if not os.path.exists(DIRECTORY_PATH):
+        logging.error(f"Directory does not exist: {DIRECTORY_PATH}")
+        return
 
-# Unzip and convert each .json.gz file to CSV, then delete the original .gz file
-for gz_file in os.listdir(current_directory):
-    if gz_file.endswith('.json.gz'):
-        # Define the file paths
-        json_file_name = gz_file.replace('.gz', '')
-        csv_file_name = json_file_name.replace('.json', '.csv')
-        json_file_path = os.path.join(current_directory, json_file_name)
-        csv_file_path = os.path.join(current_directory, csv_file_name)
-        gz_file_path = os.path.join(current_directory, gz_file)
+    json_files = [f for f in os.listdir(DIRECTORY_PATH) if f.endswith('.json')]
+    if not json_files:
+        logging.info("No .json files found.")
+        return
 
-        # Unzip the file
-        with gzip.open(gz_file_path, 'rb') as f_in, open(json_file_path, 'wb') as f_out:
-            f_out.write(f_in.read())
+    for json_file in json_files:
+        try:
+            csv_file_name = json_file.replace('.json', '.csv')
+            json_file_path = os.path.join(DIRECTORY_PATH, json_file)
+            csv_file_path = os.path.join(DIRECTORY_PATH, csv_file_name)
 
-        # Convert JSON to CSV
-        json_to_csv_ordered(json_file_path, csv_file_path, columns)
+            # Define your JSON keys here
+            columns = ["overall", "verified", "reviewTime", "reviewerID", "asin", "reviewerName", "reviewText", "summary", "unixReviewTime"]
 
-        # Delete the original .json.gz file
-        os.remove(gz_file_path)
+            with open(json_file_path, 'r', encoding='utf-8') as jfile, open(csv_file_path, 'w', newline='', encoding='utf-8') as cfile:
+                writer = csv.DictWriter(cfile, fieldnames=columns)
+                writer.writeheader()
+                for line in jfile:
+                    # Strip the newline character from each line and load the JSON object
+                    jdata = json.loads(line.strip())
+                    # Write the data to the CSV file, getting each column's value from the JSON object
+                    writer.writerow({col: jdata.get(col, "") for col in columns})
+            logging.info(f"Converted {json_file} to {csv_file_name}")
 
-        # Optional: Delete the .json file as well, uncomment the line below if desired
-        os.remove(json_file_path)
+            os.remove(json_file_path)
+            logging.info(f"Deleted {json_file} after conversion.")
+
+        except Exception as e:
+            logging.error(f"Failed to process {json_file}: {e}")
+
+# Call the function to start the conversion process
+json_csv()
