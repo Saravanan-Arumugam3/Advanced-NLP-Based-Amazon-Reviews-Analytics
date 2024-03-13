@@ -1,0 +1,31 @@
+#if doing first time:
+dvc remote add -d myremote gs://'all_beauty_5'
+
+dvc remote list
+
+dvc remote modify myremote credentialpath 'regal-bonito-415801-017316284a67.json'
+
+dvc init (if not done already)
+
+dvc add data/Clean_1.csv
+
+git add data/Clean_1.csv.dvc
+
+git add data/.gitignore
+
+
+git commit -m ""
+
+git push origin yasir 
+
+
+If updating the version of data:
+
+dvc remote modify myremote credentialpath 'regal-bonito-415801-017316284a67.json'
+
+export GOOGLE_APPLICATION_CREDENTIALS= 'regal-bonito-415801-017316284a67.json'
+
+dvc push 
+
+
+

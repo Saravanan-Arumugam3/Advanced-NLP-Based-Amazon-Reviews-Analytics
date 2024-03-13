@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "regal-bonito-415801",
+  "private_key_id": "017316284a6731e05c9fa73b7b7a8914475699b8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDf1AmdYOt2aSZk\nJdA+kkEJVuYOlVdRJTsVLwBd9j2i1AH8mmHWIqrHY9w/K+Y5WwB9vcbIhuOFlUTT\nmhI68WDUeJLRZ9HPpHw1DRLbs/Tbo314u6X1O2V7QV41f9n6rJkJb18494n1nZx2\n0AbMtI14xPZ61RBMtNMrvjnAr+OmLYaqkug27FQ7q4E3oAiP4ar06u0m+TpSS9sR\nLpAUKOMVu/IHtaZkADbA8Niku7OjcDGc4AB9f1klnsSGhusK24/ap9EnsWi1WhnJ\nkEQ4PCNz8kxKbmWE8W8KihPA1G+0vxbo4dxFEYdxPk7R0JYadqNS/C79yQ0SYNHr\nd5U58p1zAgMBAAECggEAYQz/CELMhgDM2TK+K0teMM8BnMQrYq9qgWJqXdOV4SLd\nI6rLDj7k3uTRTIDb5/Wp7luZtDwsrjDNcZTGH9GmoyoOuwaxpj+TbatYCHRskMnA\nb1ep+33AIGP1Fex0Vyl8h+dHGhvXMW0gOTI1KJCHIR0CJLt6wE/NmpN2VjLN2jDm\nr83jrPaTU6UPGoxDJuUya+bYqctyk1E+3mc7H9uCHrwzKnBC3C0K9074n/lMGxnN\nk7YiinmN2/RjM0QJFQRPiIc3TTUMkcrADacdPkSysqudgNPnBFPPgqRIMPbaQ3aD\n02gONJP5SYl70pAt1R38tPdZ+9b8zVYC8fyjgPPlGQKBgQDyU+9HZhjkb6UOgYWO\ns+EIFSbzF9HujLFeYHVvJk2qwEyyJ6lUvpQBT5gNkb1fYDgW450yQB4Qlk/LIlIn\ny9kAHvtjMVUhum6pFUieJkBsR73ifdkL7YRF3rVZfrGmHFDINOL3jJ1mLcuu+Ey0\nrFOIz1lTIrZTy59AJ+hhjxGAOQKBgQDsdOdaNvYlK5Co3fkp+yJJMvgHgzxtauUc\nNpSMRfYxWF0zgBKvfMjeNh5k3Dq4IZAbEgTMyKo9FRsQVMIgXZrjHIjS1vKsS4zv\nLisJnC8ezXuc+E3gCZsrpQLJbVHFZiLv0W7j9UQp3MDgZc0MAgTfF51x58s8uwof\nx4k5e1zzCwKBgQDm9ibF90JcXyiDBeHEnB8rs/VWlmppIcFfgTIMSQaXawbueizC\n741jHnh+3lwOzkdHUZOetEuzZYARzNlewsRFgEH7TaalKeqUzwtSaITYbxxFBctb\nufprGZPhA4bQGobH+tgkNupB2/4Y+uEpBmHrsCyjtx7uCNH0tNSgP1rfyQKBgQDZ\nETytSdVPLB4hl5y72EqSThL5upVHkSEAdG6ME1G93PO6anE83l37+EyQpMfW7yC+\naR007WWyq2Rr6pNHaQbeRPyqKR8f4j9f9s8VhGaRbWt0H1JGQCtNtq7HQO8XOvsJ\nkwasiCTqFTiPB4Vj55qXPrOPtI2Tk9TodaHYvhIHHwKBgQCewufG0dZOCONXtYhO\nFJWqR9IXfJn8oxPEKC3/rbOIm1p3bLXGjBKcVcJqnyA90QjSprqciz9eAZuDX0Wg\nOSw7wf38B1Zld2ZJHZfdCJSpP4LFvaCDPTG+ZiUCW9TN3OYdUTHZ5vCcgp08MR7j\nlT+09JivQPl3Ml7GvNJhDmwHjg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mlops-project@regal-bonito-415801.iam.gserviceaccount.com",
+  "client_id": "107239904345869743422",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mlops-project%40regal-bonito-415801.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

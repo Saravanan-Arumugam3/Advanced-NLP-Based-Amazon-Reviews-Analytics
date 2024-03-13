@@ -1,0 +1,5 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gs://all_beauty_5
+    credentialpath = ../regal-bonito-415801-017316284a67.json
