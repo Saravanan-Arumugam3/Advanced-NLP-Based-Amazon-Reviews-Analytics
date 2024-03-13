@@ -38,12 +38,18 @@ def download_and_clean_gcs_data(blob_name, columns_to_remove):
 
         clean_csv_file = '/tmp/Clean_1.csv'
         df_clean.to_csv(clean_csv_file, index=False)
+        data_folder_path = '/Users/yasir/Desktop/MLops_Project/Advanced-NLP-Based-Amazon-Reviews-Analytics/data'
+        csv_file_path = os.path.join(data_folder_path, 'Clean_1.csv')
+        df_clean.to_csv(csv_file_path, index=False)
+
+
         logging.info(f"Saved cleaned DataFrame to {clean_csv_file}")
 
         # The blob name in GCS will also be 'Clean_1.csv', replacing the dynamic naming with a fixed one
         clean_blob = bucket.blob('Clean_1.csv')
         clean_blob.upload_from_filename(clean_csv_file)
         logging.info(f"Uploaded cleaned file to GCS bucket {bucket_name} as Clean_1.csv")
+
 
         os.remove(downloaded_blob_path)
         os.remove(clean_csv_file)
