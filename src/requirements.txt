@@ -1,0 +1,6 @@
+apache-airflow==2.5.1
+selenium
+webdriver_manager
+tensorflow-data-validation
+pandas
+scikit-learn
