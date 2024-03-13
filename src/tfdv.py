@@ -79,6 +79,9 @@ def run_tfdv_workflow(data_path, schema_output_path):
     
     # Display anomalies
     print("Detected anomalies:", anomalies)
+    anomalies_str = str(anomalies)
+    return anomalies_str
+
 
 #Define the main execution logic
 if __name__ == '__main__':
