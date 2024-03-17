@@ -7,7 +7,7 @@ from src.Convert_json_csv import process_files
 #from src.Bucket import upload_files_in_directory_to_gcs
 from src.Merge_Files import merge_files
 from src.Missing_Values import download_and_clean_gcs_data
-from src.tfdv import run_tfdv_workflow
+#from src.tfdv import run_tfdv_workflow
 from airflow import configuration as conf
 
 default_args={
@@ -74,25 +74,25 @@ task6 = PythonOperator(
     dag=dag,
 )
 
-task_7 = PythonOperator(
-    task_id='run_tfdv_workflow_task',
-    python_callable=run_tfdv_workflow,  # This function needs to be defined in your environment
-    op_kwargs={
-        'schema_output_path': '/output_schema.pbtxt',  # Update this to your actual GCS path
-    },
-    dag=dag,
-)
+# task_7 = PythonOperator(
+#     task_id='run_tfdv_workflow_task',
+#     python_callable=run_tfdv_workflow,  # This function needs to be defined in your environment
+#     op_kwargs={
+#         'schema_output_path': '/output_schema.pbtxt',  # Update this to your actual GCS path
+#     },
+#     dag=dag,
+# )
 
 
 # Define the task to send an email based on the TFDV workflow's output
-send_email_task_2 = EmailOperator(
-    task_id='send_email_task_2',
-    to='atluriphanibhavana@gmail.com',
-    subject='TFDV Workflow Details',
-    html_content="{{ task_instance.xcom_pull(task_ids='run_tfdv_workflow_task', key='tfdv_details') }}",
-    dag=dag,
-)
+# send_email_task_2 = EmailOperator(
+#     task_id='send_email_task_2',
+#     to='atluriphanibhavana@gmail.com',
+#     subject='TFDV Workflow Details',
+#     html_content="{{ task_instance.xcom_pull(task_ids='run_tfdv_workflow_task', key='tfdv_details') }}",
+#     dag=dag,
+# )
 
 # Set task dependencies
-task2 >> task5 >> task6 >> task_7 >> [send_email, send_email_task_2]
+task2 >> task5 >> task6 >> send_email
 
