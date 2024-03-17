@@ -1,3 +1,4 @@
 venv_working/
 .dvc/
+__pycache__/
 
