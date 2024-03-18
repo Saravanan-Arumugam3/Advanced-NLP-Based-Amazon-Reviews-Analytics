@@ -1,3 +1,8 @@
+import os
+import sys
+# Append the src directory to the sys.path list
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime,timedelta
@@ -17,25 +22,25 @@ default_args={
     'retry_delay': timedelta(minutes=5),
 }
 
-def notify_success(context):
-    success_email=EmailOperator(
-        task_id='success_email',
-        to='aturiphanibhavana@gmail.com',
-        subject='DAG success run from Airflow',
-        html_content='<p>The task succeeded.</p>',
-        dag=context['dag']
-    )
-    success_email.execute(context=context)
+# def notify_success(context):
+#     success_email=EmailOperator(
+#         task_id='success_email',
+#         to='aturiphanibhavana@gmail.com',
+#         subject='DAG success run from Airflow',
+#         html_content='<p>The task succeeded.</p>',
+#         dag=context['dag']
+#     )
+#     success_email.execute(context=context)
 
-def notify_failure(context):
-    failure_email=EmailOperator(
-        task_id='failure_email',
-        to='aturiphanibhavana@gmail.com',
-        subject='DAG failure run from Airflow',
-        html_content='<p>The task failed.</p>',
-        dag=context['dag']
-    )
-    failure_email.execute(context=context)
+# def notify_failure(context):
+#     failure_email=EmailOperator(
+#         task_id='failure_email',
+#         to='aturiphanibhavana@gmail.com',
+#         subject='DAG failure run from Airflow',
+#         html_content='<p>The task failed.</p>',
+#         dag=context['dag']
+#     )
+#     failure_email.execute(context=context)
 
 dag = DAG(
     'datapipeline',
@@ -46,15 +51,15 @@ dag = DAG(
 
 )
 
-send_email = EmailOperator(
-    task_id='send_email',
-    to='atluriphanibhavana@gmail.com',    # Email address of the recipient
-    subject='Notification from Airflow',
-    html_content="<p>This is a notification email sent from Airflow.</p>",
-    dag=dag,
-    on_failure_callback=notify_failure,
-    on_success_callback=notify_success
-)
+# send_email = EmailOperator(
+#     task_id='send_email',
+#     to='atluriphanibhavana@gmail.com',    # Email address of the recipient
+#     subject='Notification from Airflow',
+#     html_content="<p>This is a notification email sent from Airflow.</p>",
+#     dag=dag,
+#     on_failure_callback=notify_failure,
+#     on_success_callback=notify_success
+# )
 
 task2 = PythonOperator(
     task_id='convert_json_to_csv',
@@ -94,5 +99,5 @@ task6 = PythonOperator(
 # )
 
 # Set task dependencies
-task2 >> task5 >> task6 >> send_email
+task2 >> task5 >> task6 #>> send_email
 
