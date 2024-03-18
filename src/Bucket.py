@@ -5,14 +5,18 @@ from google.cloud import storage
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Set your Google Cloud credentials file here
-
+# Define the directory where Apache Airflow is installed, defaulting to a specific path if not set,
+# then construct the path to the JSON file within the Airflow directory structure.
 AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
 json_file_path = os.path.join(AIRFLOW_HOME, 'dags', 'src','regal-bonito-415801-017316284a67.json')
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
 #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "regal-bonito-415801-017316284a67.json"
 
+
+# Define a function to list all buckets in a Google Cloud Storage project.
+# If successful, logs the name of each bucket using the logging module.
+# If an error occurs, logs the error message.
 def list_buckets():
     """Lists all buckets."""
     try:
@@ -23,6 +27,12 @@ def list_buckets():
     except Exception as e:
         logging.error(f"Failed to list buckets: {e}")
 
+
+# Define a function to upload all CSV files from a local directory to a specified Google Cloud Storage (GCS) bucket.
+# If the directory doesn't exist, logs an error and returns.
+# If no CSV files are found in the directory, logs a message and returns.
+# For each CSV file found, uploads it to the specified GCS bucket with a chunk size of 20 MB,
+# logging the upload progress and any errors that occur.
 def upload_files_in_directory_to_gcs(bucket_name, directory):
     """Uploads all CSV files in the given directory to the specified GCS bucket."""
     try:
@@ -49,9 +59,12 @@ def upload_files_in_directory_to_gcs(bucket_name, directory):
     except Exception as e:
         logging.error(f"Failed to upload files to GCS: {e}")
 
-# Example usage
+#   - Set the directory to upload as the current directory.
+#   - Set the GCS bucket name to 'all_beauty_5'. Modify it as needed.
+#   - List all buckets in the GCS project.
+#   - Upload all files from the specified directory to the specified GCS bucket.
 if __name__ == "__main__":
-    directory_to_upload = '.'  # Current directory. Change '.' to your directory if needed.
-    bucket_name = 'all_beauty_5'  # Replace with your bucket name.
-    list_buckets()  # List all buckets
-    upload_files_in_directory_to_gcs(bucket_name, directory_to_upload)  # Upload files
+    directory_to_upload = '.'
+    bucket_name = 'all_beauty_5'  
+    list_buckets()  
+    upload_files_in_directory_to_gcs(bucket_name, directory_to_upload)  
