@@ -1,12 +1,12 @@
 import os
 import sys
 # Append the src directory to the sys.path list
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src/'))
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime,timedelta
-from airflow.operators.email_operator import EmailOperator
+#from airflow.operators.email_operator import EmailOperator
 from src.Convert_json_csv import process_files
 #from src.Bucket import list_buckets
 #from src.Bucket import upload_files_in_directory_to_gcs
