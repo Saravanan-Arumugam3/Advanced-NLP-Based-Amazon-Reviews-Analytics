@@ -7,11 +7,11 @@ from google.cloud import storage
 # json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
 # bucket_name = os.environ.get('GCS_BUCKET_NAME')
 
-# It's good practice to check if the path and bucket name are actually provided
-if json_file_path is None or bucket_name is None:
-    raise ValueError("The GCP service account json path and/or bucket name are not provided in environment variables.")
+# # It's good practice to check if the path and bucket name are actually provided
+# if json_file_path is None or bucket_name is None:
+#     raise ValueError("The GCP service account json path and/or bucket name are not provided in environment variables.")
 
-# # Set the Google Cloud Storage credentials in the environment variable
+# Set the Google Cloud Storage credentials in the environment variable
 AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
 json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
 
