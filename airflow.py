@@ -1,14 +1,9 @@
 import os
 import sys
+import logging
 # Append the src directory to the sys.path list
 #sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
-project_dir = os.environ.get('AIRFLOW_PROJ_DIR')
-if project_dir:
-    src_dir = os.path.join(project_dir, 'src')
-    sys.path.append(src_dir)
-    print(f"Added to sys.path: {src_dir}")
-else:
-    print("AIRFLOW_PROJ_DIR environment variable is not set.")
+
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime,timedelta

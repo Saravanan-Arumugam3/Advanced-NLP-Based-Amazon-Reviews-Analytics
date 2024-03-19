@@ -5545,3 +5545,482 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'src'
 [2024-03-19T10:18:57.441+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
 [2024-03-19T10:18:57.483+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.080 seconds
+[2024-03-19T10:19:27.667+0000] {processor.py:153} INFO - Started process (PID=3026) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:19:27.668+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:19:27.669+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:19:27.669+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:19:27.671+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:19:27.677+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:19:27.676+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:19:27.678+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:19:27.705+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.041 seconds
+[2024-03-19T10:21:03.435+0000] {processor.py:153} INFO - Started process (PID=30) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:03.436+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:21:03.437+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:21:03.437+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:03.439+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:21:03.447+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:21:03.446+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:21:03.448+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:03.471+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.039 seconds
+[2024-03-19T10:21:33.694+0000] {processor.py:153} INFO - Started process (PID=79) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:33.695+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:21:33.697+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:21:33.697+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:33.701+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:21:33.710+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:21:33.708+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:21:33.711+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:21:33.740+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.051 seconds
+[2024-03-19T10:22:03.933+0000] {processor.py:153} INFO - Started process (PID=119) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:03.934+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:22:03.934+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:03.934+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:03.936+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:22:03.941+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:03.940+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:22:03.942+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:03.961+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.031 seconds
+[2024-03-19T10:22:34.186+0000] {processor.py:153} INFO - Started process (PID=161) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:34.188+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:22:34.189+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:34.189+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:34.195+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:22:34.206+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:34.203+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:22:34.207+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:34.252+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.072 seconds
+[2024-03-19T10:22:38.220+0000] {processor.py:153} INFO - Started process (PID=162) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:38.221+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:22:38.221+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:38.221+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:38.224+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:22:38.228+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:38.227+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:22:38.228+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:38.241+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.023 seconds
+[2024-03-19T10:22:51.307+0000] {processor.py:153} INFO - Started process (PID=184) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:51.308+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:22:51.309+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:51.309+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:51.312+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:22:51.317+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:22:51.316+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:22:51.317+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:22:51.329+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.025 seconds
+[2024-03-19T10:23:21.570+0000] {processor.py:153} INFO - Started process (PID=225) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:21.571+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:23:21.573+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:23:21.572+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:21.576+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:23:21.584+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:23:21.582+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:23:21.585+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:21.618+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.053 seconds
+[2024-03-19T10:23:51.775+0000] {processor.py:153} INFO - Started process (PID=274) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:51.777+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:23:51.778+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:23:51.778+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:51.783+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:23:51.796+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:23:51.791+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:23:51.798+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:23:51.849+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.079 seconds
+[2024-03-19T10:24:22.016+0000] {processor.py:153} INFO - Started process (PID=307) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:22.018+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:24:22.020+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:24:22.020+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:22.026+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:24:22.040+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:24:22.037+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:24:22.042+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:22.089+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.079 seconds
+[2024-03-19T10:24:52.257+0000] {processor.py:153} INFO - Started process (PID=356) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:52.259+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:24:52.261+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:24:52.260+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:52.266+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:24:52.281+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:24:52.278+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:24:52.282+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:24:52.349+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.098 seconds
+[2024-03-19T10:25:22.500+0000] {processor.py:153} INFO - Started process (PID=389) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:22.502+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:25:22.503+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:25:22.503+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:22.506+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:25:22.518+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:25:22.515+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:25:22.519+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:22.564+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.070 seconds
+[2024-03-19T10:25:52.773+0000] {processor.py:153} INFO - Started process (PID=437) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:52.775+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:25:52.777+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:25:52.776+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:52.781+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:25:52.792+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:25:52.789+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:25:52.793+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:25:52.839+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.071 seconds
+[2024-03-19T10:26:23.026+0000] {processor.py:153} INFO - Started process (PID=485) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:23.028+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:26:23.029+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:23.029+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:23.033+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:26:23.042+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:23.040+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:26:23.043+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:23.087+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.065 seconds
+[2024-03-19T10:26:53.242+0000] {processor.py:153} INFO - Started process (PID=517) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:53.243+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:26:53.244+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:53.244+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:53.246+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:26:53.251+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:53.250+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 16, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:26:53.251+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:53.267+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.028 seconds
+[2024-03-19T10:26:57.294+0000] {processor.py:153} INFO - Started process (PID=534) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:57.294+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:26:57.295+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:57.295+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:57.298+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:26:57.298+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:26:57.302+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:26:57.301+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:26:57.303+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:26:57.317+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.025 seconds
+[2024-03-19T10:27:27.508+0000] {processor.py:153} INFO - Started process (PID=565) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:27.509+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:27:27.510+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:27:27.510+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:27.512+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:27:27.513+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:27:27.518+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:27:27.517+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:27:27.519+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:27.547+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.040 seconds
+[2024-03-19T10:27:57.724+0000] {processor.py:153} INFO - Started process (PID=614) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:57.726+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:27:57.727+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:27:57.727+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:57.732+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:27:57.733+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:27:57.742+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:27:57.740+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:27:57.744+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:27:57.784+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.064 seconds
+[2024-03-19T10:28:27.923+0000] {processor.py:153} INFO - Started process (PID=647) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:27.924+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:28:27.925+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:28:27.925+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:27.927+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:28:27.927+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:28:27.930+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:28:27.930+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:28:27.931+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:28.053+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.132 seconds
+[2024-03-19T10:28:58.317+0000] {processor.py:153} INFO - Started process (PID=695) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:58.319+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:28:58.320+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:28:58.320+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:58.324+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:28:58.325+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:28:58.336+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:28:58.332+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:28:58.337+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:28:58.372+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.059 seconds
+[2024-03-19T10:29:28.524+0000] {processor.py:153} INFO - Started process (PID=728) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:28.526+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:29:28.528+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:28.527+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:28.531+0000] {logging_mixin.py:137} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:29:28.532+0000] {logging_mixin.py:137} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:29:28.541+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:28.539+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 20, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:29:28.542+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:28.576+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.057 seconds
+[2024-03-19T10:29:34.582+0000] {processor.py:153} INFO - Started process (PID=744) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:34.582+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:29:34.583+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:34.583+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:34.586+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:34.586+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:29:34.586+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:34.586+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:29:34.589+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:29:34.589+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:29:34.590+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:29:34.603+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.024 seconds
+[2024-03-19T10:30:04.785+0000] {processor.py:153} INFO - Started process (PID=776) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:04.787+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:30:04.789+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:04.789+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:04.795+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:04.795+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:30:04.796+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:04.795+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:30:04.807+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:04.804+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:30:04.808+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:04.852+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.073 seconds
+[2024-03-19T10:30:34.999+0000] {processor.py:153} INFO - Started process (PID=825) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:35.001+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:30:35.002+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:35.002+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:35.006+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:35.006+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:30:35.007+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:35.007+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:30:35.017+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:30:35.015+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:30:35.018+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:30:35.064+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.070 seconds
+[2024-03-19T10:31:05.242+0000] {processor.py:153} INFO - Started process (PID=874) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:05.243+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:31:05.245+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:05.244+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:05.250+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:05.250+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:31:05.250+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:05.250+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:31:05.260+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:05.258+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:31:05.261+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:05.306+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.069 seconds
+[2024-03-19T10:31:35.479+0000] {processor.py:153} INFO - Started process (PID=907) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:35.480+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:31:35.482+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:35.482+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:35.488+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:35.488+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:31:35.489+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:35.489+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:31:35.500+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:31:35.497+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:31:35.501+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:31:35.547+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.076 seconds
+[2024-03-19T10:32:05.736+0000] {processor.py:153} INFO - Started process (PID=956) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:05.740+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:32:05.743+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:05.742+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:05.756+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:05.755+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:32:05.757+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:05.757+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:32:05.778+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:05.773+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:32:05.780+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:05.856+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.132 seconds
+[2024-03-19T10:32:35.962+0000] {processor.py:153} INFO - Started process (PID=989) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:35.964+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:32:35.966+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:35.966+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:35.971+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:35.971+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:32:35.972+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:35.972+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:32:35.984+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:32:35.981+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:32:35.985+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:32:36.031+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.075 seconds
+[2024-03-19T10:33:06.270+0000] {processor.py:153} INFO - Started process (PID=1038) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:06.272+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:33:06.274+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:06.273+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:06.279+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:06.279+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:33:06.280+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:06.280+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:33:06.293+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:06.290+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:33:06.295+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:06.330+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.067 seconds
+[2024-03-19T10:33:36.466+0000] {processor.py:153} INFO - Started process (PID=1087) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:36.467+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:33:36.468+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:36.468+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:36.470+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:36.470+0000] {airflow.py:15} INFO - AIRFLOW_PROJ_DIR environment variable is not set.
+[2024-03-19T10:33:36.470+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:36.470+0000] {airflow.py:18} INFO - Current sys.path: ['/home/airflow/.local/bin', '/opt/airflow/src', '/opt/airflow', '/usr/local/lib/python39.zip', '/usr/local/lib/python3.9', '/usr/local/lib/python3.9/lib-dynload', '/home/airflow/.local/lib/python3.9/site-packages', '/usr/local/lib/python3.9/site-packages', '/opt/airflow/dags', '/opt/airflow/config', '/opt/airflow/plugins']
+[2024-03-19T10:33:36.475+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:33:36.474+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 24, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:33:36.475+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:33:36.494+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.031 seconds
+[2024-03-19T10:34:06.729+0000] {processor.py:153} INFO - Started process (PID=1120) to work on /opt/airflow/dags/airflow.py
+[2024-03-19T10:34:06.730+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/airflow.py for tasks to queue
+[2024-03-19T10:34:06.731+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:34:06.731+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/airflow.py
+[2024-03-19T10:34:06.747+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:34:06.745+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/airflow.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/airflow.py", line 11, in <module>
+    from src.Convert_json_csv import process_files
+ModuleNotFoundError: No module named 'src'
+[2024-03-19T10:34:06.748+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/airflow.py
+[2024-03-19T10:34:06.786+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/airflow.py took 0.063 seconds
