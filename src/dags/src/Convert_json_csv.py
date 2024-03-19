@@ -19,14 +19,33 @@ AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
 DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'dags')
 
 def upload_to_gcs(source_file_path, destination_blob_name):
-    """Uploads a file to the bucket."""
+    """
+    Function to upload a file from a local path to a specified destination in Google Cloud Storage (GCS),
+    logging the upload progress.
+
+    Parameters:
+        source_file_path (str): The local file path of the file to be uploaded.
+            This should be a string representing the absolute or relative path to the file.
+        destination_blob_name (str): The name to assign to the file in the GCS bucket.
+            This should be a string representing the desired name for the file in the bucket.
+            The file will be uploaded to the bucket with this name.
+    """
     blob = bucket.blob(destination_blob_name)
     blob.upload_from_filename(source_file_path)
     logging.info(f"File {source_file_path} uploaded to {destination_blob_name}.")
 
+
 def json_to_csv_and_upload(json_file_path, csv_file_path, destination_blob_name):
-    """Converts a JSON file to CSV and uploads it to GCS."""
-    # Define your JSON keys here
+    """ 
+    Function to convert a JSON file to CSV format, using specified JSON keys as columns, 
+    then upload the resulting CSV file to Google Cloud Storage (GCS) with a given destination blob name.
+    Converts a JSON file to CSV and uploads it to GCS.
+    
+    Parameters:
+        json_file_path (str): The path to the JSON file that needs to be converted to CSV.
+        csv_file_path (str): The path where the resulting CSV file will be saved.
+        destination_blob_name (str): The name of the blob (file) in Google Cloud Storage where the CSV file will be uploaded.
+    """
     columns = ["overall", "verified", "reviewTime", "reviewerID", "asin", "reviewerName", "reviewText", "summary", "unixReviewTime"]
     with open(json_file_path, 'r', encoding='utf-8') as jfile, open(csv_file_path, 'w', newline='', encoding='utf-8') as cfile:
         writer = csv.DictWriter(cfile, fieldnames=columns)
@@ -36,7 +55,14 @@ def json_to_csv_and_upload(json_file_path, csv_file_path, destination_blob_name)
             writer.writerow({col: jdata.get(col, "") for col in columns})
     upload_to_gcs(csv_file_path, destination_blob_name)
 
+ 
 def process_files():
+    """
+    Function to process files:
+  - Set up logging configuration to display INFO level messages with timestamp and format.
+  - Log the start of the process with the directory path where files are processed.
+  - If the specified directory does not exist, log an error and return. 
+    """
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info(f"Starting process in directory: {DIRECTORY_PATH}")
 
