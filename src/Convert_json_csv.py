@@ -6,28 +6,25 @@ import logging
 from google.cloud import storage
 
 # Initialize Google Cloud Storage client and specify your bucket name
-AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
-json_file_path = os.path.join(AIRFLOW_HOME, 'dags','src', 'regal-bonito-415801-017316284a67.json')
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+json_file_path = os.path.join(AIRFLOW_HOME, 'mlops-project-417704-47dfa275f621.json')
+#json_file_path = os.path.join(AIRFLOW_HOME, 'dags','src', 'mlops-project-417704-47dfa275f621.json')
 
 
 gcs_client = storage.Client.from_service_account_json(json_file_path)
-bucket_name = 'all_beauty_5'
+bucket_name = 'amazon_reviews_project'
 bucket = gcs_client.bucket(bucket_name)
 
 # Set the directory where your .gz or .json files are located
-AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
-DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'dags')
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'data')
 
-# Define a function to upload a file from a local path to a specified destination in Google Cloud Storage (GCS),
-# logging the upload progress.
 def upload_to_gcs(source_file_path, destination_blob_name):
     """Uploads a file to the bucket."""
     blob = bucket.blob(destination_blob_name)
     blob.upload_from_filename(source_file_path)
     logging.info(f"File {source_file_path} uploaded to {destination_blob_name}.")
 
-# Define a function to convert a JSON file to CSV format, using specified JSON keys as columns,
-# then upload the resulting CSV file to Google Cloud Storage (GCS) with a given destination blob name.
 def json_to_csv_and_upload(json_file_path, csv_file_path, destination_blob_name):
     """Converts a JSON file to CSV and uploads it to GCS."""
     # Define your JSON keys here
@@ -40,10 +37,6 @@ def json_to_csv_and_upload(json_file_path, csv_file_path, destination_blob_name)
             writer.writerow({col: jdata.get(col, "") for col in columns})
     upload_to_gcs(csv_file_path, destination_blob_name)
 
-# Define a function to process files:
-#   - Set up logging configuration to display INFO level messages with timestamp and format.
-#   - Log the start of the process with the directory path where files are processed.
-#   - If the specified directory does not exist, log an error and return.
 def process_files():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info(f"Starting process in directory: {DIRECTORY_PATH}")

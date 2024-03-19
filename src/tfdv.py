@@ -11,13 +11,11 @@ from util import add_extra_rows_to_df
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Set Google Cloud Storage credentials and bucket name
-AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
-json_file_path = os.path.join(AIRFLOW_HOME, 'dags', 'src', 'regal-bonito-415801-017316284a67.json')
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+json_file_path = os.path.join(AIRFLOW_HOME, 'mlops-project-417704-47dfa275f621.json')
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
-bucket_name = 'all_beauty_5'
+bucket_name = 'amazon_reviews_project'
 
-# Function to download cleaned data from a specified blob in Google Cloud Storage (GCS) to a local file,
-# logging the download progress.
 def download_cleaned_data_from_gcs(cleaned_data_blob_name, local_file_path):
     """Download the cleaned data from GCS to a local file."""
     storage_client = storage.Client()
@@ -26,22 +24,18 @@ def download_cleaned_data_from_gcs(cleaned_data_blob_name, local_file_path):
     blob.download_to_filename(local_file_path)
     logging.info(f"Downloaded cleaned data to {local_file_path}")
 
-# Function to generate statistics for the provided DataFrame using TensorFlow Data Validation (TFDV).
 def generate_statistics(df):
     """Generate statistics for the given DataFrame using TensorFlow Data Validation."""
     return tfdv.generate_statistics_from_dataframe(df)
 
-# Function to infer a schema for given statistics using TensorFlow Data Validation.
 def infer_schema(statistics):
     """Infer a schema for the given statistics using TensorFlow Data Validation."""
     return tfdv.infer_schema(statistics)
 
-# Function to validate given statistics against provided schema using TensorFlow Data Validation.
 def validate_statistics(statistics, schema):
     """Validate the given statistics against the provided schema using TensorFlow Data Validation."""
     return tfdv.validate_statistics(statistics, schema)
 
-# Function to save the TFDV schema to a file.
 def save_schema(schema, output_path):
     """Save the TFDV schema to a file."""
     schema_text = schema_pb2.Schema()
@@ -49,7 +43,6 @@ def save_schema(schema, output_path):
     with open(output_path, 'w') as f:
         f.write(str(schema_text))
 
-# Function to modify the schema based on specific requirements.
 def modify_schema(schema):
     """Modify the schema based on specific requirements."""
     # Example modifications (customize as needed)
@@ -57,7 +50,6 @@ def modify_schema(schema):
     product_type_domain.value.append('AMAZON_FASHION_6')
     tfdv.set_domain(schema, 'overall', schema_pb2.FloatDomain(name='overall', min=1.0, max=5.0))
 
-# Function to run the TFDV workflow using cleaned data from GCS.
 def run_tfdv_workflow(schema_output_path):
     """Runs the TFDV workflow using the cleaned data from GCS."""
     cleaned_data_blob_name = 'Clean_1.csv'

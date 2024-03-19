@@ -1,7 +1,5 @@
 import pandas as pd
 
-# Define a function to add extra rows to a DataFrame (df) with specified data,
-# representing additional reviews for testing purposes.
 def add_extra_rows(df):
     rows = [
         {

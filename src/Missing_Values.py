@@ -6,14 +6,9 @@ import logging
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Function to download a CSV file from a specified Google Cloud Storage (GCS) bucket,
-# clean it by removing specified columns, handling missing values and duplicates,
-# and upload the cleaned data back to the GCS bucket.
-# Log various stages of the process such as downloading, cleaning, and uploading,
-# as well as any encountered errors.
 def download_and_clean_gcs_data():
-    
-    bucket_name = 'all_beauty_5'
+    # Hardcoded values for bucket name, blob name, and columns to remove
+    bucket_name = 'amazon_reviews_project'
     blob_name = 'MergedData.csv'
     columns_to_remove = ['reviewerID', 'reviewerName', 'unixReviewTime']
 

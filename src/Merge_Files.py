@@ -3,17 +3,13 @@ import pandas as pd
 from google.cloud import storage
 
 # Set the Google Cloud Storage credentials in the environment variable
-AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/Users/phanibhavanaatluri')
-json_file_path = os.path.join(AIRFLOW_HOME, 'dags', 'src', 'regal-bonito-415801-017316284a67.json')
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+json_file_path = os.path.join(AIRFLOW_HOME, 'mlops-project-417704-47dfa275f621.json')
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
 
-bucket_name = 'all_beauty_5'
+bucket_name = 'amazon_reviews_project'
 
-# Define a function to merge CSV files stored in a Google Cloud Storage (GCS) bucket.
-# The function downloads each CSV file, reads it into a DataFrame, adds a column with the filename,
-# concatenates all DataFrames, saves the merged DataFrame to a CSV file,
-# uploads the merged CSV file back to GCS, and prints a summary of the merged data.
 def merge_files():
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
