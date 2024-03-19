@@ -4,7 +4,7 @@ from google.cloud import storage
 
 # Set the Google Cloud Storage credentials in the environment variable
 AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
-json_file_path = os.path.join(AIRFLOW_HOME, 'mlops-project-417704-47dfa275f621.json')
+json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
 
