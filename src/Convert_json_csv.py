@@ -24,6 +24,9 @@ from google.cloud import storage
 json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
 bucket_name = os.environ.get('GCS_BUCKET_NAME')
 
+if json_file_path is None:
+    raise ValueError("GCP service account JSON path not found. Ensure the GCP_SERVICE_ACCOUNT_JSON environment variable is set.")
+
 # Initialize Google Cloud Storage client
 gcs_client = storage.Client.from_service_account_json(json_file_path)
 bucket = gcs_client.bucket(bucket_name)
