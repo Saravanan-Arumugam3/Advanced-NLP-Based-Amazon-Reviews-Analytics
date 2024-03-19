@@ -51,6 +51,8 @@ x-airflow-common:
   environment:
     &airflow-common-env
     PYTHONPATH: "/opt/airflow/src:${PYTHONPATH}"
+    AIRFLOW_UID: ${AIRFLOW_UID}
+    AIRFLOW_GID: ${AIRFLOW_GID}
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     # For backward compatibility, with Airflow <2.3
@@ -65,13 +67,15 @@ x-airflow-common:
     GCS_BUCKET_NAME: "${GCS_BUCKET_NAME}"
     PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
+    - ${AIRFLOW_PROJ_DIR:-.}:/opt/airflow
+    - ${GCP_SERVICE_ACCOUNT_JSON}:/opt/airflow/gcp_service_account.json:ro
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/src:/opt/airflow/src
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/working_data:/opt/airflow/working_data
     - ./requirements.txt:/requirements.txt
-  user: "${AIRFLOW_UID:-50000}:0"
+  user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID}"
   depends_on:
     &airflow-common-depends-on
     redis:
@@ -125,6 +129,12 @@ services:
     environment:
       <<: *airflow-common-env
       GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}
+    volumes:
+    - ${AIRFLOW_PROJ_DIR}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR}/plugins:/opt/airflow/plugins
+    - ${GCP_SERVICE_ACCOUNT_JSON}:/opt/airflow/gcp_service_account.json:ro
+
 
   airflow-scheduler:
     <<: *airflow-common
@@ -141,7 +151,12 @@ services:
         condition: service_completed_successfully
     environment:
       <<: *airflow-common-env
-      GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}   
+      GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}
+    volumes:
+    - ${AIRFLOW_PROJ_DIR}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR}/plugins:/opt/airflow/plugins
+    - ${GCP_SERVICE_ACCOUNT_JSON}:/opt/airflow/gcp_service_account.json:ro   
 
   airflow-worker:
     <<: *airflow-common
@@ -155,6 +170,7 @@ services:
       retries: 5
     environment:
       <<: *airflow-common-env
+      GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
@@ -163,9 +179,11 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
-    environment:
-      <<: *airflow-common-env
-      GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}
+    volumes:
+    - ${AIRFLOW_PROJ_DIR}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR}/plugins:/opt/airflow/plugins
+    - ${GCP_SERVICE_ACCOUNT_JSON}:/opt/airflow/gcp_service_account.json:ro
 
   airflow-triggerer:
     <<: *airflow-common
@@ -183,6 +201,11 @@ services:
     environment:
       <<: *airflow-common-env
       GCP_SERVICE_ACCOUNT_JSON: ${GCP_SERVICE_ACCOUNT_JSON}
+    volumes:
+    - ${AIRFLOW_PROJ_DIR}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR}/plugins:/opt/airflow/plugins
+    - ${GCP_SERVICE_ACCOUNT_JSON}:/opt/airflow/gcp_service_account.json:ro
 
   airflow-init:
     <<: *airflow-common
