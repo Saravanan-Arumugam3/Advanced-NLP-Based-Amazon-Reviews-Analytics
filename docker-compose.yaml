@@ -74,6 +74,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/working_data:/opt/airflow/working_data
+    - /home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json:/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json
     - ./requirements.txt:/requirements.txt
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID}"
   depends_on:

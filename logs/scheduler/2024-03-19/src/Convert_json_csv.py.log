@@ -1,0 +1,432 @@
+[2024-03-19T10:41:28.063+0000] {processor.py:153} INFO - Started process (PID=32) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:28.063+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:41:28.064+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:41:28.064+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:28.176+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:41:28.174+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:41:28.176+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:28.192+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.132 seconds
+[2024-03-19T10:41:58.323+0000] {processor.py:153} INFO - Started process (PID=82) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:58.324+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:41:58.325+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:41:58.325+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:58.443+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:41:58.440+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:41:58.444+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:41:58.477+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.159 seconds
+[2024-03-19T10:42:28.598+0000] {processor.py:153} INFO - Started process (PID=123) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:28.599+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:42:28.599+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:42:28.599+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:28.641+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:42:28.640+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:42:28.642+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:28.664+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.068 seconds
+[2024-03-19T10:42:58.934+0000] {processor.py:153} INFO - Started process (PID=166) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:58.935+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:42:58.936+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:42:58.936+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:59.063+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:42:59.059+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:42:59.064+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:42:59.097+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.170 seconds
+[2024-03-19T10:43:29.326+0000] {processor.py:153} INFO - Started process (PID=215) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:29.327+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:43:29.328+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:43:29.328+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:29.429+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:43:29.426+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:43:29.431+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:29.469+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.148 seconds
+[2024-03-19T10:43:59.715+0000] {processor.py:153} INFO - Started process (PID=249) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:59.716+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:43:59.717+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:43:59.717+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:59.822+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:43:59.818+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:43:59.823+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:43:59.862+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.153 seconds
+[2024-03-19T10:44:30.125+0000] {processor.py:153} INFO - Started process (PID=299) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:44:30.126+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:44:30.127+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:44:30.127+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:44:30.258+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:44:30.254+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:44:30.260+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:44:30.291+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.172 seconds
+[2024-03-19T10:45:00.537+0000] {processor.py:153} INFO - Started process (PID=333) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:00.538+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:45:00.539+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:45:00.539+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:00.684+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:45:00.680+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:45:00.685+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:00.715+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.183 seconds
+[2024-03-19T10:45:30.961+0000] {processor.py:153} INFO - Started process (PID=383) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:30.963+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:45:30.965+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:45:30.964+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:31.098+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:45:31.094+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:45:31.099+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:45:31.234+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.279 seconds
+[2024-03-19T10:46:01.427+0000] {processor.py:153} INFO - Started process (PID=424) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:01.428+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:46:01.428+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:46:01.428+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:01.600+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:46:01.598+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:46:01.601+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:01.625+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.200 seconds
+[2024-03-19T10:46:31.674+0000] {processor.py:153} INFO - Started process (PID=467) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:31.676+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:46:31.677+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:46:31.677+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:31.898+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:46:31.896+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:46:31.898+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:46:31.911+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.242 seconds
+[2024-03-19T10:47:40.352+0000] {processor.py:153} INFO - Started process (PID=32) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:47:40.353+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:47:40.354+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:47:40.354+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:47:40.498+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:47:40.497+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:47:40.499+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:47:40.525+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.176 seconds
+[2024-03-19T10:48:10.780+0000] {processor.py:153} INFO - Started process (PID=82) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:10.781+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:48:10.782+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:48:10.782+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:10.896+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:48:10.893+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:48:10.897+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:10.941+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.168 seconds
+[2024-03-19T10:48:41.012+0000] {processor.py:153} INFO - Started process (PID=132) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:41.013+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:48:41.014+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:48:41.014+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:41.061+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:48:41.060+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:48:41.062+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:48:41.090+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.081 seconds
+[2024-03-19T10:49:11.255+0000] {processor.py:153} INFO - Started process (PID=166) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:11.256+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:49:11.258+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:49:11.257+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:11.369+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:49:11.364+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:49:11.370+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:11.395+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.146 seconds
+[2024-03-19T10:49:41.634+0000] {processor.py:153} INFO - Started process (PID=216) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:41.635+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:49:41.637+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:49:41.636+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:41.742+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:49:41.739+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:49:41.743+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:49:41.765+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.135 seconds
+[2024-03-19T10:50:12.013+0000] {processor.py:153} INFO - Started process (PID=249) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:12.014+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:50:12.017+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:50:12.017+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:12.152+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:50:12.143+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:50:12.154+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:12.185+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.179 seconds
+[2024-03-19T10:50:42.420+0000] {processor.py:153} INFO - Started process (PID=299) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:42.422+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:50:42.428+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:50:42.427+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:42.576+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:50:42.573+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:50:42.576+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:50:42.592+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.180 seconds
+[2024-03-19T10:51:12.652+0000] {processor.py:153} INFO - Started process (PID=349) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:12.653+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:51:12.653+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:51:12.653+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:12.692+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:51:12.690+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:51:12.692+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:12.720+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.070 seconds
+[2024-03-19T10:51:42.970+0000] {processor.py:153} INFO - Started process (PID=382) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:42.971+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:51:42.973+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:51:42.972+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:43.081+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:51:43.076+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:51:43.082+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:51:43.228+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.263 seconds
+[2024-03-19T10:52:39.311+0000] {processor.py:153} INFO - Started process (PID=32) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:52:39.312+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:52:39.313+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:52:39.313+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:52:39.427+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:52:39.426+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:52:39.428+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:52:39.458+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.149 seconds
+[2024-03-19T10:53:09.544+0000] {processor.py:153} INFO - Started process (PID=80) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:09.546+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:53:09.546+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:53:09.546+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:09.621+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:53:09.618+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:53:09.622+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:09.637+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.096 seconds
+[2024-03-19T10:53:39.892+0000] {processor.py:153} INFO - Started process (PID=113) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:39.895+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:53:39.898+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:53:39.898+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:40.031+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:53:40.029+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:53:40.032+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:53:40.058+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.177 seconds
+[2024-03-19T10:54:10.296+0000] {processor.py:153} INFO - Started process (PID=163) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:10.297+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:54:10.299+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:54:10.299+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:10.406+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:54:10.402+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:54:10.407+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:10.448+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.158 seconds
+[2024-03-19T10:54:40.539+0000] {processor.py:153} INFO - Started process (PID=196) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:40.540+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:54:40.542+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:54:40.542+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:40.674+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:54:40.671+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 31, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/saravanan/Desktop/MLOps/Advanced-NLP-Based-Amazon-Reviews-Analytics/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:54:40.675+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:54:40.704+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.172 seconds
+[2024-03-19T10:55:05.887+0000] {processor.py:153} INFO - Started process (PID=236) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:05.887+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:55:05.888+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:55:05.888+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:05.931+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:55:05.929+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 14, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/src/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:55:05.931+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:05.944+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.059 seconds
+[2024-03-19T10:55:36.197+0000] {processor.py:153} INFO - Started process (PID=278) to work on /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:36.199+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/src/Convert_json_csv.py for tasks to queue
+[2024-03-19T10:55:36.201+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:55:36.200+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:36.342+0000] {logging_mixin.py:137} INFO - [2024-03-19T10:55:36.339+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/src/Convert_json_csv.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/src/Convert_json_csv.py", line 14, in <module>
+    gcs_client = storage.Client.from_service_account_json(json_file_path)
+  File "/home/airflow/.local/lib/python3.9/site-packages/google/cloud/client/__init__.py", line 106, in from_service_account_json
+    with io.open(json_credentials_path, "r", encoding="utf-8") as json_fi:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/src/mlops-project-417704-47dfa275f621.json'
+[2024-03-19T10:55:36.343+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/src/Convert_json_csv.py
+[2024-03-19T10:55:36.392+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/src/Convert_json_csv.py took 0.203 seconds

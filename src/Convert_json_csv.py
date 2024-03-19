@@ -5,27 +5,27 @@ import gzip
 import logging
 from google.cloud import storage
 
-# # Initialize Google Cloud Storage client and specify your bucket name
-# AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
-# json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
-# #json_file_path = os.path.join(AIRFLOW_HOME, 'dags','src', 'mlops-project-417704-47dfa275f621.json')
+# Initialize Google Cloud Storage client and specify your bucket name
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
+#json_file_path = os.path.join(AIRFLOW_HOME, 'dags','src', 'mlops-project-417704-47dfa275f621.json')
+DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'data')
+
+gcs_client = storage.Client.from_service_account_json(json_file_path)
+bucket_name = 'amazon_reviews_project'
+bucket = gcs_client.bucket(bucket_name)
+
+# Set the directory where your .gz or .json files are located
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
+DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'data')
 
 
-# gcs_client = storage.Client.from_service_account_json(json_file_path)
-# bucket_name = 'amazon_reviews_project'
-# bucket = gcs_client.bucket(bucket_name)
+# # Use environment variables to get the path to the JSON file and bucket name
+# json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
+# bucket_name = os.environ.get('GCS_BUCKET_NAME')
 
-# # Set the directory where your .gz or .json files are located
-# AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
-# DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'data')
-
-
-# Use environment variables to get the path to the JSON file and bucket name
-json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
-bucket_name = os.environ.get('GCS_BUCKET_NAME')
-
-if json_file_path is None:
-    raise ValueError("GCP service account JSON path not found. Ensure the GCP_SERVICE_ACCOUNT_JSON environment variable is set.")
+# if json_file_path is None:
+#     raise ValueError("GCP service account JSON path not found. Ensure the GCP_SERVICE_ACCOUNT_JSON environment variable is set.")
 
 # Initialize Google Cloud Storage client
 gcs_client = storage.Client.from_service_account_json(json_file_path)
