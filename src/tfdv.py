@@ -12,16 +12,16 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # # Set Google Cloud Storage credentials and bucket name
 # Fetch the bucket name and JSON file path from environment variables
-bucket_name = os.environ.get('GCS_BUCKET_NAME', 'default-bucket-name')
-json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON', '/path/to/your/service-account-file.json')
+# bucket_name = os.environ.get('GCS_BUCKET_NAME', 'default-bucket-name')
+# json_file_path = os.environ.get('GCP_SERVICE_ACCOUNT_JSON', '/path/to/your/service-account-file.json')
 
-# Set Google Cloud Storage credentials in the environment variable
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
+# # Set Google Cloud Storage credentials in the environment variable
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
 
 # AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
-# json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
-# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
-# bucket_name = 'amazon_reviews_project'
+json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa275f621.json')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
+bucket_name = 'amazon_reviews_project'
 
 def download_cleaned_data_from_gcs(cleaned_data_blob_name, local_file_path):
     """Download the cleaned data from GCS to a local file."""

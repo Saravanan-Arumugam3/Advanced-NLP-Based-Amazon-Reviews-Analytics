@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 def download_and_clean_gcs_data():
     # Hardcoded values for bucket name, blob name, and columns to remove
-    bucket_name = os.environ.get('GCS_BUCKET_NAME')
+    bucket_name = 'amazon_reviews_project'
     blob_name = 'MergedData.csv'
     columns_to_remove = ['reviewerID', 'reviewerName', 'unixReviewTime']
 
