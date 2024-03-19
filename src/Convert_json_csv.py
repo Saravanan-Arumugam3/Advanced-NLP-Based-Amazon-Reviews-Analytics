@@ -12,8 +12,8 @@ json_file_path = os.path.join(AIRFLOW_HOME, 'src', 'mlops-project-417704-47dfa27
 DIRECTORY_PATH = os.path.join(AIRFLOW_HOME, 'data')
 
 gcs_client = storage.Client.from_service_account_json(json_file_path)
-bucket_name = 'amazon_reviews_project'
-bucket = gcs_client.bucket(bucket_name)
+#bucket_name = 'amazon_reviews_project'
+bucket = 'amazon_reviews_project'
 
 # Set the directory where your .gz or .json files are located
 AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', '/home/saravanan/Desktop/MLOps_Spring24/Advanced-NLP-Based-Amazon-Reviews-Analytics')
