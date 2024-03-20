@@ -11,6 +11,13 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = json_file_path
 bucket_name = 'all_beauty_5'
 
 def merge_files():
+    """
+    Function to merge CSV files stored in a Google Cloud Storage (GCS) bucket.
+    The function downloads each CSV file, reads it into a DataFrame, adds a column with the filename,
+    concatenates all DataFrames, saves the merged DataFrame to a CSV file,
+    uploads the merged CSV file back to GCS, and prints a summary of the merged data.
+
+    """
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
     blobs = bucket.list_blobs(prefix='CSV/')  # Access files within the 'csv' folder
