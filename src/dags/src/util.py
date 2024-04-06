@@ -1,6 +1,11 @@
 import pandas as pd
 
+
 def add_extra_rows(df):
+    """
+    Function to add extra rows to a DataFrame (df) with specified data,
+    representing additional reviews for testing purposes.
+    """
     rows = [
         {
             'overall': 7.0, 
