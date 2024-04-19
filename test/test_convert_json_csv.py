@@ -6,7 +6,7 @@ import os
 # Adjust the path to include the directory where convert_json_csv.py is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-import convert_json_csv
+import Convert_json_csv
 
 class TestUploadToGCS(unittest.TestCase):
     @patch('convert_json_csv.bucket.blob')
