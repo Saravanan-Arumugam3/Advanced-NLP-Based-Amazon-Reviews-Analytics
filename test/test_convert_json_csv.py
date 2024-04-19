@@ -1,5 +1,11 @@
 import unittest
 from unittest.mock import patch, mock_open, MagicMock
+import sys
+import os
+
+# Adjust the path to include the directory where convert_json_csv.py is located
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
+
 import convert_json_csv
 
 class TestUploadToGCS(unittest.TestCase):
