@@ -5,10 +5,16 @@ import os
 import gzip
 import json
 import csv
-import importlib.util
 
-# Set the path to where the actual module is located
-module_path = os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src', 'Convert_json_csv.py')
+# Append the path where the actual module is located
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
+
+# Prepare to mock the storage client globally before import
+patcher = patch('google.cloud.storage.Client.from_service_account_json')
+MockClient = patcher.start()
+MockClient.return_value = MagicMock()
+
+import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
@@ -19,6 +25,7 @@ class TestProcessFiles(unittest.TestCase):
         self.extracted_json_path = self.sample_gz_path.replace('.gz', '.json')
         self.extracted_csv_path = self.extracted_json_path.replace('.json', '.csv')
 
+        # Write sample data into a .gz file
         sample_data = json.dumps({
             "overall": 5, "verified": True, "reviewTime": "2021-01-01",
             "reviewerID": "AB123", "asin": "123456", "reviewerName": "John Doe",
@@ -28,36 +35,31 @@ class TestProcessFiles(unittest.TestCase):
             gz_file.write(sample_data)
 
     def tearDown(self):
-        """Clean up by removing the files created for testing."""
+        """Clean up by removing the files and directories created for testing."""
         os.remove(self.sample_gz_path)
-        os.remove(self.extracted_json_path)
-        os.remove(self.extracted_csv_path)
+        if os.path.exists(self.extracted_json_path):
+            os.remove(self.extracted_json_path)
+        if os.path.exists(self.extracted_csv_path):
+            os.remove(self.extracted_csv_path)
         os.rmdir(self.test_dir)
 
     def test_process_files_end_to_end(self):
         """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        # Dynamically import the required function
-        spec = importlib.util.spec_from_file_location("process_files", module_path)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
-        process_files = module.process_files
+        Convert_json_csv.process_files()
 
-        # Mock the GCS Client within the dynamically loaded module
-        with patch('Convert_json_csv.storage.Client') as mock_gcs_client:
-            mock_gcs_client.from_service_account_json.return_value = MagicMock()
+        # Check if JSON and CSV files were created as expected
+        self.assertTrue(os.path.exists(self.extracted_json_path))
+        self.assertTrue(os.path.exists(self.extracted_csv_path))
 
-            # Execute the process
-            process_files()
+        # Verify the contents of the CSV file
+        with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            rows = list(reader)
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]['reviewText'], "Great product!")
 
-            # Asserts
-            self.assertTrue(os.path.exists(self.extracted_json_path))
-            self.assertTrue(os.path.exists(self.extracted_csv_path))
-
-            with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
-                reader = csv.DictReader(csvfile)
-                rows = list(reader)
-                self.assertEqual(len(rows), 1)
-                self.assertEqual(rows[0]['reviewText'], "Great product!")
+# Stop the patcher after all tests are done
+patcher.stop()
 
 if __name__ == '__main__':
     unittest.main()
