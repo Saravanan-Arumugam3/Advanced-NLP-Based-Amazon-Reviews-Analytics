@@ -4,18 +4,14 @@ import sys
 import os
 import csv
 
-# Adjust the path where the actual module is located
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
-
-# Import the module
-import Convert_json_csv
-
+# Mock Google Cloud Storage client before importing the module
+@patch('google.cloud.storage.Client.from_service_account_json', MagicMock(return_value=MagicMock()))
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
-        """Set up test environment."""
+        """Set up test environment by ensuring the correct test directory and files exist."""
         self.test_dir = os.path.join(os.path.dirname(__file__), 'test_data')
-        # Ensure this file exists in 'test_data' directory before running the test
-        self.sample_gz_path = os.path.join(self.test_dir, 'sample_data.gz')  
+        os.makedirs(self.test_dir, exist_ok=True)
+        self.sample_gz_path = os.path.join(self.test_dir, 'sample_data.gz')  # Ensure this file exists
         self.extracted_json_path = self.sample_gz_path.replace('.gz', '.json')
         self.extracted_csv_path = self.extracted_json_path.replace('.json', '.csv')
 
@@ -25,20 +21,18 @@ class TestProcessFiles(unittest.TestCase):
             os.remove(self.extracted_json_path)
         if os.path.exists(self.extracted_csv_path):
             os.remove(self.extracted_csv_path)
+        os.rmdir(self.test_dir)
 
-    @patch('Convert_json_csv.get_gcs_client')
-    @patch('Convert_json_csv.get_bucket')
-    @patch('Convert_json_csv.upload_to_gcs')
-    def test_process_files_end_to_end(self, mock_upload_to_gcs, mock_get_bucket, mock_get_gcs_client):
-        """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        mock_bucket = MagicMock()
-        mock_get_gcs_client.return_value = MagicMock()
-        mock_get_bucket.return_value = mock_bucket
+    def test_process_files_end_to_end(self):
+        """Test the processing from .gz to JSON to CSV without actual GCS interaction."""
+        # Adjust the import to be within the test method after the GCS client has been mocked
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
+        import Convert_json_csv
 
-        # Ensure all paths and directories are perceived as existent
+        # Mock os.path.exists and os.listdir to simulate file presence
         with patch('os.path.exists', MagicMock(return_value=True)), \
              patch('os.listdir', MagicMock(return_value=['sample_data.gz'])):
-            Convert_json_csv.process_files(self.test_dir, '', '')  # Assuming you adjust process_files to accept parameters
+            Convert_json_csv.process_files(self.test_dir, '', '')  # Process the existing .gz file
 
             # Assert that JSON and CSV files were created as expected
             self.assertTrue(os.path.exists(self.extracted_json_path), "JSON file was not created.")
