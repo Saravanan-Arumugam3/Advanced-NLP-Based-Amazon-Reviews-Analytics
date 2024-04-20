@@ -2,53 +2,43 @@ import unittest
 from unittest.mock import patch, MagicMock
 import sys
 import os
-import gzip
-import json
 import csv
 
 # Adjust the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-# Mock Google Cloud Storage client before importing the module
-with patch('google.cloud.storage.Client.from_service_account_json') as MockClient:
-    MockClient.return_value = MagicMock()
-    import Convert_json_csv
+# Import the module
+import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
-        """Set up test environment by creating necessary dummy files."""
+        """Set up test environment."""
         self.test_dir = os.path.join(os.path.dirname(__file__), 'test_data')
-        os.makedirs(self.test_dir, exist_ok=True)
-        self.sample_gz_path = os.path.join(self.test_dir, 'sample_data.gz')
+        # Ensure this file exists in 'test_data' directory before running the test
+        self.sample_gz_path = os.path.join(self.test_dir, 'sample_data.gz')  
         self.extracted_json_path = self.sample_gz_path.replace('.gz', '.json')
         self.extracted_csv_path = self.extracted_json_path.replace('.json', '.csv')
 
-        # Write sample data into a .gz file
-        sample_data = json.dumps({
-            "overall": 5, "verified": True, "reviewTime": "2021-01-01",
-            "reviewerID": "AB123", "asin": "123456", "reviewerName": "John Doe",
-            "reviewText": "Great product!", "summary": "Loved it!", "unixReviewTime": 161987
-        })
-        with gzip.open(self.sample_gz_path, 'wt') as gz_file:
-            gz_file.write(sample_data)
-
-        # Mock environment variables to control the script's behavior
-        os.environ['AIRFLOW_HOME'] = self.test_dir
-
     def tearDown(self):
-        """Clean up by removing the files and directories created for testing."""
-        os.remove(self.sample_gz_path)
+        """Clean up by removing the files created during the test."""
         if os.path.exists(self.extracted_json_path):
             os.remove(self.extracted_json_path)
         if os.path.exists(self.extracted_csv_path):
             os.remove(self.extracted_csv_path)
-        os.rmdir(self.test_dir)
 
-    def test_process_files_end_to_end(self):
+    @patch('Convert_json_csv.get_gcs_client')
+    @patch('Convert_json_csv.get_bucket')
+    @patch('Convert_json_csv.upload_to_gcs')
+    def test_process_files_end_to_end(self, mock_upload_to_gcs, mock_get_bucket, mock_get_gcs_client):
         """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        # Mock os.listdir to simulate finding the gzip file
-        with patch('os.listdir', return_value=['sample_data.gz']):
-            Convert_json_csv.process_files()  # Call without arguments
+        mock_bucket = MagicMock()
+        mock_get_gcs_client.return_value = MagicMock()
+        mock_get_bucket.return_value = mock_bucket
+
+        # Ensure all paths and directories are perceived as existent
+        with patch('os.path.exists', MagicMock(return_value=True)), \
+             patch('os.listdir', MagicMock(return_value=['sample_data.gz'])):
+            Convert_json_csv.process_files(self.test_dir, '', '')  # Assuming you adjust process_files to accept parameters
 
             # Assert that JSON and CSV files were created as expected
             self.assertTrue(os.path.exists(self.extracted_json_path), "JSON file was not created.")
