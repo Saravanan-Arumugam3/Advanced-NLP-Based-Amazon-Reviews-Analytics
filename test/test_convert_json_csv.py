@@ -6,10 +6,13 @@ import gzip
 import json
 import csv
 
-# Adjust the path to where the actual module is located
+# Adjust the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-import Convert_json_csv  # Assuming Convert_json_csv uses the refactored code
+# Mock Google Cloud Storage client before importing the module
+with patch('google.cloud.storage.Client') as MockClient:
+    MockClient.from_service_account_json = MagicMock()
+    import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
@@ -38,12 +41,9 @@ class TestProcessFiles(unittest.TestCase):
             os.remove(self.extracted_csv_path)
         os.rmdir(self.test_dir)
 
-    @patch('Convert_json_csv.os.listdir', MagicMock(return_value=['sample_data.gz']))  # Mock listdir to only return the sample gz
-    @patch('Convert_json_csv.os.path.exists', MagicMock(return_value=True))  # Assume all paths exist
-    @patch('Convert_json_csv.upload_to_gcs')  # Mock upload_to_gcs to do nothing
     def test_process_files_end_to_end(self):
         """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        Convert_json_csv.process_files(self.test_dir, '', '')  # Pass empty strings for json_file_path and bucket_name
+        Convert_json_csv.process_files(self.test_dir, '', '')  # Adjusted for no actual JSON or bucket name
 
         # Assert that JSON and CSV files were created as expected
         self.assertTrue(os.path.exists(self.extracted_json_path), "JSON file was not created.")
