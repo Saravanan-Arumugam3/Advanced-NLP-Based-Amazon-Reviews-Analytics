@@ -9,7 +9,7 @@ import csv
 # Append the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-import convert_json_csv
+import c\Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
@@ -35,7 +35,7 @@ class TestProcessFiles(unittest.TestCase):
     def test_process_files_end_to_end(self):
         """Test the processing of files from .gz to JSON to CSV"""
         # Adjust the function to save JSON and CSV in the test directory
-        convert_json_csv.process_files()
+        Convert_json_csv.process_files()
 
         # Ensure the JSON and CSV files were created
         self.assertTrue(os.path.exists(self.extracted_json_path))
