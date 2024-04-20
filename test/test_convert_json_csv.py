@@ -2,15 +2,17 @@ import unittest
 from unittest.mock import patch, MagicMock
 import sys
 import os
-import gzip  # Make sure gzip is imported
+import gzip
 import json
 import csv
 
-# Append the path where the actual module is located
+# Ensure the module path is correct
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-# Import the module after adjusting the path
-import Convert_json_csv
+# Import the module with GCS client mocked to avoid ImportError
+with patch('google.cloud.storage.Client.from_service_account_json') as MockClient:
+    MockClient.return_value = MagicMock()
+    import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
@@ -41,12 +43,8 @@ class TestProcessFiles(unittest.TestCase):
         os.remove(self.extracted_json_path)
         os.remove(self.extracted_csv_path)
 
-    @patch('Convert_json_csv.storage.Client')  # Mock the GCS Client
-    def test_process_files_end_to_end(self, mock_gcs_client):
+    def test_process_files_end_to_end(self):
         """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        # Bypass GCS client initialization
-        mock_gcs_client.from_service_account_json.return_value = MagicMock()
-
         # Mocking os.path.exists to always return True to avoid directory error
         with patch('os.path.exists', return_value=True):
             # Execute the process
