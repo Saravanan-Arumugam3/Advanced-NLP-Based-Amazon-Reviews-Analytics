@@ -10,8 +10,8 @@ import csv
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
 # Mock Google Cloud Storage client before importing the module
-with patch('google.cloud.storage.Client') as MockClient:
-    MockClient.from_service_account_json = MagicMock()
+with patch('google.cloud.storage.Client.from_service_account_json') as MockClient:
+    MockClient.return_value = MagicMock()
     import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
@@ -32,6 +32,9 @@ class TestProcessFiles(unittest.TestCase):
         with gzip.open(self.sample_gz_path, 'wt') as gz_file:
             gz_file.write(sample_data)
 
+        # Mock environment variables to control the script's behavior
+        os.environ['AIRFLOW_HOME'] = self.test_dir
+
     def tearDown(self):
         """Clean up by removing the files and directories created for testing."""
         os.remove(self.sample_gz_path)
@@ -43,18 +46,20 @@ class TestProcessFiles(unittest.TestCase):
 
     def test_process_files_end_to_end(self):
         """Test processing from .gz to JSON to CSV without actual GCS interaction."""
-        Convert_json_csv.process_files(self.test_dir, '', '')  # Adjusted for no actual JSON or bucket name
+        # Mock os.listdir to simulate finding the gzip file
+        with patch('os.listdir', return_value=['sample_data.gz']):
+            Convert_json_csv.process_files()  # Call without arguments
 
-        # Assert that JSON and CSV files were created as expected
-        self.assertTrue(os.path.exists(self.extracted_json_path), "JSON file was not created.")
-        self.assertTrue(os.path.exists(self.extracted_csv_path), "CSV file was not created.")
+            # Assert that JSON and CSV files were created as expected
+            self.assertTrue(os.path.exists(self.extracted_json_path), "JSON file was not created.")
+            self.assertTrue(os.path.exists(self.extracted_csv_path), "CSV file was not created.")
 
-        # Verify the contents of the CSV file
-        with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
-            reader = csv.DictReader(csvfile)
-            rows = list(reader)
-            self.assertEqual(len(rows), 1)
-            self.assertEqual(rows[0]['reviewText'], "Great product!")
+            # Verify the contents of the CSV file
+            with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
+                reader = csv.DictReader(csvfile)
+                rows = list(reader)
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(rows[0]['reviewText'], "Great product!")
 
 if __name__ == '__main__':
     unittest.main()
