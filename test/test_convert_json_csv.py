@@ -9,7 +9,7 @@ import csv
 # Append the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-import c\Convert_json_csv
+import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
