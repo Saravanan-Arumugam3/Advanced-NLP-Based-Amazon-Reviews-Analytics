@@ -6,8 +6,10 @@ import os
 # Append the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-# Import the module after adjusting the path
-import Convert_json_csv
+# Mock GCS client before importing the module
+with patch('google.cloud.storage.Client') as MockClient:
+    MockClient.from_service_account_json = MagicMock()
+    import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
