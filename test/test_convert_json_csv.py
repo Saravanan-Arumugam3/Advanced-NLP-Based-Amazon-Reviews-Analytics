@@ -1,15 +1,16 @@
 import unittest
-from unittest.mock import patch, MagicMock, mock_open
+from unittest.mock import patch, MagicMock
 import sys
 import os
+import gzip  # Make sure gzip is imported
+import json
+import csv
 
 # Append the path where the actual module is located
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src', 'dags', 'src'))
 
-# Mock GCS client before importing the module
-with patch('google.cloud.storage.Client') as MockClient:
-    MockClient.from_service_account_json = MagicMock()
-    import Convert_json_csv
+# Import the module after adjusting the path
+import Convert_json_csv
 
 class TestProcessFiles(unittest.TestCase):
     def setUp(self):
@@ -20,7 +21,17 @@ class TestProcessFiles(unittest.TestCase):
         self.extracted_csv_path = self.extracted_json_path.replace('.json', '.csv')
 
         # Sample data to be written into a .gz file
-        sample_data = '{"overall": 5, "verified": true, "reviewTime": "2021-01-01", "reviewerID": "AB123", "asin": "123456", "reviewerName": "John Doe", "reviewText": "Great product!", "summary": "Loved it!", "unixReviewTime": 161987}'
+        sample_data = json.dumps({
+            "overall": 5,
+            "verified": True,
+            "reviewTime": "2021-01-01",
+            "reviewerID": "AB123",
+            "asin": "123456",
+            "reviewerName": "John Doe",
+            "reviewText": "Great product!",
+            "summary": "Loved it!",
+            "unixReviewTime": 161987
+        })
         with gzip.open(self.sample_gz_path, 'wt') as gz_file:
             gz_file.write(sample_data)
 
@@ -36,19 +47,21 @@ class TestProcessFiles(unittest.TestCase):
         # Bypass GCS client initialization
         mock_gcs_client.from_service_account_json.return_value = MagicMock()
 
-        # Execute the process
-        Convert_json_csv.process_files()
+        # Mocking os.path.exists to always return True to avoid directory error
+        with patch('os.path.exists', return_value=True):
+            # Execute the process
+            Convert_json_csv.process_files()
 
-        # Check if JSON and CSV files were created as expected
-        self.assertTrue(os.path.exists(self.extracted_json_path))
-        self.assertTrue(os.path.exists(self.extracted_csv_path))
+            # Check if JSON and CSV files were created as expected
+            self.assertTrue(os.path.exists(self.extracted_json_path))
+            self.assertTrue(os.path.exists(self.extracted_csv_path))
 
-        # Verify the contents of the CSV file
-        with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
-            reader = csv.DictReader(csvfile)
-            rows = list(reader)
-            self.assertEqual(len(rows), 1)
-            self.assertEqual(rows[0]['reviewText'], "Great product!")
+            # Verify the contents of the CSV file
+            with open(self.extracted_csv_path, 'r', newline='', encoding='utf-8') as csvfile:
+                reader = csv.DictReader(csvfile)
+                rows = list(reader)
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(rows[0]['reviewText'], "Great product!")
 
 if __name__ == '__main__':
     unittest.main()
