@@ -1,0 +1,12 @@
+Flask 
+google-cloud-storage 
+joblib 
+scikit-learn 
+grpcio 
+gcsfs 
+python-dotenv
+mlflow
+tensorflow
+pandas
+numpy
+pytz
