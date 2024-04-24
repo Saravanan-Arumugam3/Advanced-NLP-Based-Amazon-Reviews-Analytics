@@ -186,5 +186,43 @@ Google Cloud Storage (GCS):
 
 We use Google Cloud Storage for storing source files and CSV files. GCS used to store large volumes of raw Amazon reviews. GCS offers object storage with global edge-caching for fast access to data. The reviews are stored in organized buckets, with versioning enabled to keep track of changes and maintain data integrity. We are also using GCS to store versions of the processed data.
 
+## Deployment Strategy
+Our deployment strategy for the Amazon Reviews Analytics system is built around robust MLOps practices to ensure seamless transition from model training to production. We employ tools such as MLflow for model lifecycle management, TensorFlow Extended (TFX) for end-to-end machine learning pipelines, Vertex AI for model training and serving, and Docker for containerization.
 
+### MLflow Integration
+MLflow is utilized for tracking experiments, packaging code into reproducible runs, and managing and storing models. It aids in the systematic tracking of parameters, code versions, metrics, and artifacts across our experiments, leading to a structured approach in model development.
 
+### TensorFlow Extended (TFX)
+TensorFlow Extended (TFX) is our choice for a production-grade machine learning platform, which provides a framework to deploy robust, scalable, and production-ready ML pipelines. It includes TensorFlow Data Validation, TensorFlow Transform, and TensorFlow Model Analysis, providing a suite of tools from data preprocessing to post-training model evaluation.
+
+### Vertex AI and Model Serving
+We use Google Cloud's Vertex AI to train our machine learning models at scale. Vertex AI offers a managed environment that simplifies the process of training and serving models. For serving, Vertex AI provides a scalable solution that automatically adjusts resources to match demand, ensuring efficient and reliable model predictions.
+
+### Docker and Containerization
+The deployment is streamlined using Docker, where each service of our application is containerized, allowing for isolated environments and easy scalability. Docker ensures that our application can run consistently across different environments and simplifies dependencies management.
+
+## Model Training and Selection
+During the model training phase, two models were developed:
+
+1. BERT-based Sentiment Analysis Model (`bert_sentiment_model.pth`)
+2. LSTM-based Sentiment Analysis Model (`model.h5`)
+
+The LSTM-based model showed superior performance in capturing the context and nuances of customer sentiment and was thus chosen for production deployment.
+
+### Deployment Details
+The deployed LSTM model (`model.h5`) is packaged into a Docker container along with a Flask web application that acts as a REST API endpoint. This API facilitates interaction with the model by external services and applications.
+
+The deployment process includes:
+
+1. Building a Docker image with the Flask application and LSTM model.
+2. Pushing the Docker image to a container registry (GCP Container Registry).
+3. Deploying the containerized application onto Google Cloud Run, which is a serverless platform that automatically scales up or down based on the incoming request load.
+
+### Continuous Integration and Deployment (CI/CD)
+CI/CD pipelines are configured to automate the testing, building, and deployment of our application. Upon a new commit to the main branch in the GitHub repository, the CI pipeline runs tests to validate the integrity of the code. Post successful tests, the CD pipeline automates the deployment of the application to the production environment.
+
+### Monitoring and Observability
+The production environment is closely monitored using Google Cloud Operations (formerly Stackdriver) which provides powerful logging, monitoring, and diagnostics. This enables us to track the model's performance, understand usage patterns, and quickly identify and rectify any potential issues.
+
+## Conclusion
+The integration of MLflow, TensorFlow, Vertex AI, and Docker encapsulates our commitment to robust MLOps practices. With a single LSTM-based model deployed out of the two trained, we maintain a focus on quality and performance, ensuring that the Advanced NLP-Based Amazon Reviews Analytics system remains at the forefront of sentiment analysis applications.
