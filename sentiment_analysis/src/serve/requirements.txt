@@ -1,0 +1,8 @@
+flask
+google-cloud-storage
+werkzeug
+python-dotenv
+pandas
+joblib
+tensorflow
+mlflow
