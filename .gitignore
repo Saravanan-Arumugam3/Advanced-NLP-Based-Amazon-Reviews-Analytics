@@ -3,3 +3,5 @@ venv_working/
 __pycache__/
 
 mlops-project-417704-47dfa275f621.json
+
+.env
