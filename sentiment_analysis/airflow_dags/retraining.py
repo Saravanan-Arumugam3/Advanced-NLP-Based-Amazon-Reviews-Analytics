@@ -2,25 +2,28 @@ import datetime as dt
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 
-LOCAL_PREPROCESS_FILE_PATH = '/tmp/preprocess.py'
-GITHUB_PREPROCESS_RAW_URL = 'https://raw.githubusercontent.com/shankar-dh/Timeseries/main/src/data_preprocess.py'  # Adjust the path accordingly
+LOCAL_PREPROCESS_FILE_PATH = '/tmp/data_preprocess.py'
+GITHUB_PREPROCESS_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/main/sentiment_analysis/src/data_preprocess.py'  # Adjust the path accordingly
 
 LOCAL_TRAIN_FILE_PATH = '/tmp/train.py'
-GITHUB_TRAIN_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/821e733cc9114e7c056295cd73dc1e3a84206088/sentiment_analysis/src/trainer/train.py'
+GITHUB_TRAIN_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/main/sentiment_analysis/src/trainer/train.py'  # Adjust the path accordingly
+
 default_args = {
-    'owner': 'Team_1',
-    'start_date': dt.datetime(2024, 4, 23),
-    'retries': 0,
+    'owner': 'mlops_pro',
+    'start_date': dt.datetime(2023, 10, 24),
+    'retries': 1,
     'retry_delay': dt.timedelta(minutes=5),
+    'depends_on_past': False,
 }
 
 dag = DAG(
     'model_retraining',
     default_args=default_args,
     description='Model retraining at 9 PM everyday',
-    schedule_interval='0 21 * * *',  # Every day at 9 pm
+    schedule_interval='0 21 * * *',
     catchup=False,
 )
+
 
 # Tasks for pulling scripts from GitHub
 pull_preprocess_script = BashOperator(
@@ -35,25 +38,27 @@ pull_train_script = BashOperator(
     dag=dag,
 )
 
-
 env = {
-    'AIP_MODEL_DIR = gs://mlops_pro/model'
+    'AIP_STORAGE_URI': 'gs://mlops_pro/model'
 }
+
+
+
 
 # Tasks for running scripts
 run_preprocess_script = BashOperator(
     task_id='run_preprocess_script',
-    bash_command=f'python {LOCAL_PREPROCESS_FILE_PATH}',
+    bash_command='python /tmp/data_preprocess.py',
     env=env,
     dag=dag,
 )
 
 run_train_script = BashOperator(
     task_id='run_train_script',
-    bash_command=f'python {LOCAL_TRAIN_FILE_PATH}',
+    bash_command='python /tmp/train.py',
     env=env,
     dag=dag,
 )
 
 # Setting up dependencies
-pull_preprocess_script >> pull_train_script >> run_preprocess_script >> run_train_script
+pull_preprocess_script >> pull_train_script >>run_preprocess_script >> run_train_script
