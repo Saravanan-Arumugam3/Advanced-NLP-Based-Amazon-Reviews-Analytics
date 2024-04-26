@@ -6,7 +6,7 @@ LOCAL_PREPROCESS_FILE_PATH = '/tmp/data_preprocess.py'
 GITHUB_PREPROCESS_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/main/sentiment_analysis/src/data_preprocess.py'  # Adjust the path accordingly
 
 LOCAL_TRAIN_FILE_PATH = '/tmp/train.py'
-GITHUB_TRAIN_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/main/sentiment_analysis/bert_fine_tune_modified.ipynb'  # Adjust the path accordingly
+GITHUB_TRAIN_RAW_URL = 'https://raw.githubusercontent.com/Saravanan-Arumugam3/Advanced-NLP-Based-Amazon-Reviews-Analytics/main/sentiment_analysis/bert_fine_tune.py'  # Adjust the path accordingly
 
 default_args = {
     'owner': 'mlops_pro',
